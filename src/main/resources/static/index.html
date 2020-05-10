@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8"/>
+        <title>Cookie-Test</title>
+    </head>
+    <body>
+        <h2>Create Cookie:</h2>
+        <ul>
+            <li><a href="https://test1.group1.local.domain:8080/create" target="_blank">test1.group1.local.domain</a></li>
+        </ul>
+        <h2>Read Cookie - /read</h2>
+        <ul>
+            <li><a href="https://test1.group1.local.domain:8080/read" target="_blank">test1.group1.local.domain - available for (*.)group1.local.domain</a></li>
+            <li><a href="https://test2.group1.local.domain:8080/read" target="_blank">test2.group1.local.domain - available for (*.)group1.local.domain</a></li>
+            <li><a href="https://test1.group2.local.domain:8080/read" target="_blank">test1.group2.local.domain - not available for (*.)group2.local.domain</a></li>
+            <li><a href="https://test2.group2.local.domain:8080/read" target="_blank">test2.group2.local.domain - not available for (*.)group2.local.domain</a></li>
+        </ul>
+        <h2>Read Cookie - /script.html</h2>
+        <ul>
+            <li><a href="https://test1.group2.local.domain:8080/script.html" target="_blank">test1.group2.local.domain - allowed because of CORS settings</a></li>
+            <li><a href="https://test2.group1.local.domain:8080/script.html" target="_blank">test2.group1.local.domain - not allowed because of CORS settings</a></li>
+        </ul>
+    </body>
+</html>

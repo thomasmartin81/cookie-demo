@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8"/>
+    <title>Cookie-Test</title>
+    <script>
+        function checkCookie() {
+            const cookieDiv = document.getElementById("cookie");
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    cookieDiv.innerHTML = xhr.responseText;
+                } else {
+                    cookieDiv.innerHTML = 'readyState=' + this.readyState + ', status=' + this.status;
+                }
+            };
+            xhr.open("GET", "https://test1.group1.local.domain:8080/read", true);
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+<button onclick="checkCookie()">Get Cookie infos</button><br>
+<div id="cookie">
+    Click the button to get cookie infos!
+</div>
+</body>
+</html>
